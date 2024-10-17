@@ -2,23 +2,30 @@
 
 * {
     font-family: "Josefin Sans", sans-serif;
-    color: white;
+    color: rgb(65, 34, 34);
 }
 
 body {
-    background-color: black;
+    background-color: #ffffff;
     overflow-x: hidden;
 }
-
 nav {
-    max-width: 100%;
-    width: 90%;
-    margin: 50px auto;
+    position: fixed;                /* Fixe la nav sur le côté gauche */
+    top: 0;                         /* Positionne la nav en haut de la page */
+    left: 0;                        /* Positionne la nav à gauche de la page */
+    height: 100vh;                  /* La navigation prend toute la hauteur de la fenêtre */
+    width: 200px;                   /* Définit la largeur de la barre de navigation */
+    background-color: #f0f0f0;      /* Couleur de fond de la nav */
+    padding: 20px;                  /* Ajoute de l'espace à l'intérieur de la nav */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);  /* Ombre pour un effet visuel */
 }
 
 nav>a {
+    display: block;                 /* Affiche les liens verticalement */
     text-decoration: none;
-    margin-right: 25px;
+    margin-bottom: 20px;            /* Espace entre chaque lien */
+    font-size: 18px;
+    color: #333;
     position: relative;
 }
 
@@ -26,10 +33,10 @@ nav>a:hover::before {
     content: "";
     width: 100%;
     height: 2px;
-    background-color: rgb(188, 14, 14);
+    background-color: #66B7AD;
     position: absolute;
     left: 0px;
-    bottom: 0px;
+    bottom: -5px;                  /* Ajuste la position de l'effet de survol */
 }
 
 .sidebar {
@@ -58,7 +65,7 @@ nav>a:hover::before {
 }
 
 header {
-    width: 80%;
+    width: 50%;
     margin: 100px auto;
     position: relative;
 }
@@ -68,18 +75,18 @@ header>h2 {
 }
 
 .prim_btn {
-    background: rgb(223,88,12);
-    background: linear-gradient(90deg, rgba(223,88,12,1) 0%, rgba(253,153,61,1) 100%);
+    background: #C4FDFB;
+    background: linear-gradient(90deg,#66B7AD 60%, #66B7AD 100%);
     padding: 15px 18px;
     border-radius: 5px;
-    border: 2px solid white;
+    border: 2px solid #66B7AD;
     width: 100px;
     text-align: center;
 }
 
 .prim_btn:hover {
-    background: rgb(223,88,12);
-    background: linear-gradient(90deg, rgba(223,88,12,1) 60%, rgba(253,153,61,1) 100%);
+    background:  #C4FDFB 50%;
+    background: linear-gradient(90deg,  #66B7AD 60%,  #66B7AD 100%);
 }
 
 .btn2 {
@@ -130,7 +137,7 @@ header>h2 {
 }
 
 .a_propos {
-    width: 80%;
+    width: 50%;
     margin: 0 auto;
 }
 
@@ -153,8 +160,8 @@ header>h2 {
     padding: 20px;
     justify-content: center;
     align-items: center;
-    background-color: rgb(223,88,12);
-    width: 60%;
+    background-color:#66B7AD;;
+    width: 50%;
     height: 200px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -166,7 +173,7 @@ header>h2 {
     justify-content: center; /* Centre les logos horizontalement */
     align-items: center; /* Centre les logos verticalement */
     gap: 20px; /* Espace entre les logos */
-    width: 80%; /* Ajustez la largeur du conteneur si nécessaire */
+    width: 50%; /* Ajustez la largeur du conteneur si nécessaire */
     margin: 0 auto; /* Centre le conteneur horizontalement */
     gap: 90px; /* Augmentez la valeur pour plus d'espace entre les logos */
 }
@@ -190,7 +197,7 @@ header>h2 {
     padding: 20px;
     background-color: transparent; /* Couleur de fond légèrement grise pour contraste */
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
-    width: 80%; /* Ajustez la largeur si nécessaire */
+    width: 50%; /* Ajustez la largeur si nécessaire */
     max-width: 1200px; /* Limite la largeur maximale pour éviter l'élargissement excessif */
 }
 
@@ -213,7 +220,7 @@ header>h2 {
 }
 
 .city {
-    color: orange; /* Couleur des villes */
+    color: #66B7AD;; /* Couleur des villes */
     font-weight: bold;
 }
 
@@ -226,7 +233,7 @@ header>h2 {
 .skills-container {
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 50%;
     gap: 20px; /* Espace entre les deux conteneurs */
 }
 
@@ -269,7 +276,7 @@ header>h2 {
 
 .skills-box ul li::before {
     content: '•'; /* Ajouter un point avant chaque élément */
-    color: orange;
+    color: #66B7AD;;
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -286,7 +293,7 @@ header>h2 {
 }
 
 .software-section {
-    padding: 40px;
+    padding: 50px;
     background-color: #f9f9f9;
     text-align: center;
 }
@@ -296,6 +303,8 @@ header>h2 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    width: 50%;
+    margin: 0 auto;            /* Centre horizontalement le conteneur sur la page */
 }
 
 .software-box {
