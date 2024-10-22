@@ -5,10 +5,25 @@
     color: rgb(65, 34, 34);
 }
 
-body {
-    background-color: #ffffff;
-    overflow-x: hidden;
+.fanny {
+    font-family: 'Parisienne', cursive; /* Appliquer la police */
+    font-size: 36px; /* Ajuster la taille de la police */
+    color: #333; /* Couleur du texte */
 }
+
+html { 
+    background-image: url('../asset/6856488V2.jpg');
+    background-size: cover; /* L'image couvre tout l'écran */
+    background-position: center; /* L'image est centrée */
+    background-repeat: no-repeat; /* L'image ne se répète pas */
+    background-attachment: fixed; /* L'image reste fixe quand on fait défiler la page */
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+}
+
+  body {
+
+}
+
 nav {
     position: fixed;                /* Fixe la nav sur le côté gauche */
     top: 0;                         /* Positionne la nav en haut de la page */
@@ -75,23 +90,30 @@ header>h2 {
 }
 
 .prim_btn {
-    background: #C4FDFB;
-    background: linear-gradient(90deg,#66B7AD 60%, #66B7AD 100%);
-    padding: 15px 18px;
-    border-radius: 5px;
-    border: 2px solid #66B7AD;
-    width: 100px;
+    background: #1E3A8A; /* Bleu profond */
+    color: #fff; /* Couleur du texte en blanc pour le contraste */
+    padding: 12px 20px; /* Réduire légèrement la taille pour plus de finesse */
+    border-radius: 25px; /* Arrondir davantage les bords pour un effet plus doux */
+    border: 1px solid #A7C7E7; /* Affiner le contour et utiliser une couleur plus douce */
+    width: auto; /* Laisse le texte déterminer la largeur */
     text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 16px; /* Taille de texte légèrement plus grande pour l'équilibre */
+    font-weight: 500; /* Un poids intermédiaire pour plus de finesse */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Une légère ombre pour créer de la profondeur */
+    transition: all 0.3s ease; /* Transition douce pour les interactions */
+    cursor: pointer; /* Curseur en forme de main */
 }
 
 .prim_btn:hover {
-    background:  #C4FDFB 50%;
-    background: linear-gradient(90deg,  #66B7AD 60%,  #66B7AD 100%);
+    background: #2959C1; /* Change le bleu pour un ton plus lumineux au survol */
+    border: 1px solid #66B7AD; /* Accentue légèrement le contour au survol */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Accentue l'ombre au survol pour un effet subtil */
 }
 
 .btn2 {
-    background: rgb(67,67,67);
-    background: linear-gradient(90deg, rgba(67,67,67,1) 0%, rgba(0,0,0,1) 100%);
+    background: #1E3A8A;
+    background: linear-gradient(90deg,#1E3A8A 0%, #1E3A8A 100%);
     padding: 15px 18px;
     border-radius: 5px;
     border: 2px solid white;
@@ -154,34 +176,46 @@ header>h2 {
 
 }
 
+
+
 .container {
     display: flex;
-    margin:  200px auto 200px auto;
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
-    background-color:#66B7AD;;
-    width: 50%;
-    height: 200px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    border: 2px solid white;
+    flex-direction: column; /* Organiser les sections l'une sous l'autre */
+    align-items: center; /* Centrer les sections horizontalement */
+    width: 100%; /* Utiliser toute la largeur */
+    margin: 80px 0; /* Marge pour espacer des sections */
+}
+
+.experience-section {
+    display: flex; /* Utiliser flexbox pour aligner le contenu horizontalement */
+    align-items: center; /* Centrer les éléments verticalement */
+    margin: 80px 0; /* Marge pour espacer des sections */
+    width: 80%; /* Ajustez la largeur selon vos besoins */
+    background-color: transparent; /* Couleur de fond légèrement grise pour contraste */
+}
+
+.experience-title {
+    font-family: 'Parisienne', cursive;
+    font-size: 25px; /* Taille de la police pour le titre */
+    font-weight: bold; /* Mettre le titre en gras */
+    color: #333; /* Couleur du texte */
+    margin-right: 20px; /* Marge à droite pour espacer le titre des logos */
 }
 
 .logo-container {
     display: flex;
-    justify-content: center; /* Centre les logos horizontalement */
-    align-items: center; /* Centre les logos verticalement */
-    gap: 20px; /* Espace entre les logos */
-    width: 50%; /* Ajustez la largeur du conteneur si nécessaire */
-    margin: 0 auto; /* Centre le conteneur horizontalement */
-    gap: 90px; /* Augmentez la valeur pour plus d'espace entre les logos */
+    gap: 40px; /* Espace entre les logos */
+    margin: 40px 0; /* Marge pour espacer des sections */
+    background-color: transparent; /* Couleur de fond légèrement grise pour contraste */
 }
+
 .logo {
-    width: 180px; /* Largeur fixe */
-    height: 180px; /* Hauteur fixe */
+    width: 100px; /* Largeur fixe */
+    height: 100px; /* Hauteur fixe */
     object-fit: contain; /* Maintient le ratio d'aspect tout en remplissant les dimensions */
     transition: transform 0.3s ease; /* Effet de transition */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre plus subtile */
+    padding: 10px; /* Ajout de padding pour éloigner le contenu de l'ombre */
 }
 
 .logo:hover {
@@ -190,37 +224,36 @@ header>h2 {
 }
 
 .education-section {
+    font-family: 'Parisienne', cursive;
     display: flex;
+    flex-direction: column; /* Aligner verticalement les éléments */
     align-items: center; /* Centre les éléments horizontalement dans le conteneur */
-    justify-content: center; /* Centre les éléments verticalement dans le conteneur */
-    margin: 200px auto; /* Marge verticale de 200px et horizontale automatique pour centrer */
-    padding: 20px;
+    margin: 50px auto; /* Marge verticale pour espacer des sections */
+    padding: 10px; /* Ajouter un peu de padding */
     background-color: transparent; /* Couleur de fond légèrement grise pour contraste */
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
-    width: 50%; /* Ajustez la largeur si nécessaire */
-    max-width: 1200px; /* Limite la largeur maximale pour éviter l'élargissement excessif */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre plus subtile */
+    width: 35%; /* Largeur du conteneur */
+    max-width: 800px; /* Limiter la largeur maximale */
+    border-radius: 10px; /* Arrondir légèrement les coins */
 }
 
 .education-title {
-    font-size: 28px;
+    font-size: 25px;
     font-weight: bold;
-    right: 0;
-    display: flex;
-    align-items: center;
+    font-family: 'Parisienne', cursive;
     color: #333; /* Couleur du texte */
-    margin:  10px 20px;
-
+    margin: 10px 0; /* Espacement autour du titre */
 }
 
 .education-details p {
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 1.2;
     color: #555;
     margin-bottom: 20px;
 }
 
 .city {
-    color: #66B7AD;; /* Couleur des villes */
+    color: #66B7AD; /* Couleur des villes */
     font-weight: bold;
 }
 
@@ -233,15 +266,15 @@ header>h2 {
 .skills-container {
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 37%;
     gap: 20px; /* Espace entre les deux conteneurs */
 }
 
 .skills-box {
-    background: linear-gradient(to bottom, #e0e0e0, #f5f5f5); /* Dégradé de gris du haut vers le bas */
+    background: #1E3A8A; /* Dégradé de gris du haut vers le bas */
     border: 2px solid #ccc; /* Bordure grise */
-    border-radius: 15px; /* Bord arrondi */
-    padding: 20px;
+    border-radius: 70px; /* Bord arrondi */
+    padding: 5px;
     width: 45%; /* Les deux conteneurs prennent chacun environ 45% de l'espace */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour un effet de profondeur */
     transition: transform 0.3s ease;
@@ -253,49 +286,58 @@ header>h2 {
 
 .skills-box h3 {
     font-size: 24px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     text-align: center;
-    color: #333;
+    color: #ffffff;
     border-bottom: 2px solid hsl(0, 1%, 23%);
     padding-bottom: 10px;
 }
 
 .skills-box ul {
     list-style-type: none;
-    padding: 0;
+    margin: 0,1;
+    text-align: center;
 }
 
 .skills-box ul li {
-    font-size: 18px;
+    font-size: 15px;
     line-height: 1.6;
-    color: #555;
-    padding-left: 10px;
+    color: #f7f3f3;
+    padding-left: 3px;
+    padding-right: 8px;
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .skills-box ul li::before {
     content: '•'; /* Ajouter un point avant chaque élément */
-    color: #66B7AD;;
+    color: #ecf3f2;;
     font-weight: bold;
     position: absolute;
     left: 0;
     top: 0;
     transform: translateY(-2px);
+    font-family: 'Parisienne', cursive; /* Appliquer la police */
 }
 
 .soft-skills h3 {
-    color: hsl(0, 0%, 4%); /* Couleur différente pour le titre des Soft Skills */
+    color: hsl(0, 3%, 93%); /* Couleur différente pour le titre des Soft Skills */
+    font-family: 'Parisienne', cursive; /* Appliquer la police */
 }
 
 .hard-skills h3 {
-    color: hsl(60, 5%, 4%); /* Couleur différente pour le titre des Hard Skills */
+    color: hsl(0, 0%, 100%); /* Couleur différente pour le titre des Hard Skills */
+    font-family: 'Parisienne', cursive; /* Appliquer la police */
 }
 
 .software-section {
     padding: 50px;
     background-color: #f9f9f9;
     text-align: center;
+    width: 100%; /* S'assurer que la section prend toute la largeur */
+    margin: 0; /* Supprimer toute marge qui pourrait restreindre la largeur */
+    height: 100%; /* S'assurer que le corps prend toute la hauteur */
+    font-family: 'Parisienne', cursive; /* Appliquer la police */
 }
 
 .software-container {
@@ -305,12 +347,13 @@ header>h2 {
     gap: 20px;
     width: 50%;
     margin: 0 auto;            /* Centre horizontalement le conteneur sur la page */
+    font-family: 'Parisienne', cursive; /* Appliquer la police */
 }
 
 .software-box {
     width: 100px;
     height: 100px;
-    background: #ffffff;
+    background:  #f0f0f0;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -320,10 +363,11 @@ header>h2 {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    font-family: 'Parisienne', cursive; /* Appliquer la police */
 }
 
 .software-box:hover {
-    box-shadow: 0 0 15px rgba(0, 0, 255, 0.5); /* Lueur bleue */
+    box-shadow: 0 0 20px #1E3A8A; /* Lueur bleue */
 }
 
 .software-box img {
@@ -331,10 +375,12 @@ header>h2 {
     height: auto;
     max-height: 80px;
     object-fit: contain;
+    font-family: 'Parisienne', cursive; /* Appliquer la police */
 }
 
 .software-box p {
     margin: 0;
     font-size: 16px;
     color: #333;
+    font-family: 'Parisienne', cursive; /* Appliquer la police */
 }
