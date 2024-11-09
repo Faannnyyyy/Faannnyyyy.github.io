@@ -6,35 +6,13 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <link rel="stylesheet" href="./asset/style.css">
-</head>
-<body>
-    <nav>
-        <a href="#">Accueil</a>
-        <a href="#">Contact</a>
-        <a href="#">Ma personnalité</a>
-        <a href="#">Mes réalisations</a>
-    </nav> 
-    <div class="sidebar">
-        <a href=""><i class="fa-brands fa-instagram"></i></a>
-        <a href=""><i class="fa-solid fa-hashtag"></i></a>
-        <a href=""><i class="fa-solid fa-hashtag"></i></a>
-        <a href=""><i class="fa-solid fa-hashtag"></i></a>
-        <a href=""><i class="fa-solid fa-hashtag"></i></a>
-        <a href=""><i class="fa-solid fa-hashtag"></i></a>
-    </div>
-    <title>Expérience Professionnelle</title>
     <style>
-        /* Mise en page avec trois colonnes */
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin: 0 auto;
-        }
+       
+ 
 
         /* Colonne de gauche : Image */
         .left {
-            width: 20%; /* Ajustez la largeur si nécessaire */
+            width: 20%;
             padding: 10px;
         }
 
@@ -72,9 +50,61 @@
             height: 200px;
             border: none;
         }
+
+        .carousel-manual {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+    }
+
+    .carousel-track-manual {
+        display: flex;
+        width: 100%;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-manual img {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    /* Style des boutons */
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+
+
     </style>
 </head>
 <body>
+
+    <!-- Barre de navigation -->
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="#">Contact</a>
+        <a href="#">Ma personnalité</a>
+        <a href="#">Mes réalisations</a>
+    </nav> 
+
+
+    <!-- Contenu principal avec les trois colonnes -->
     <div class="container">
         <!-- Colonne de gauche : Image -->
         <div class="left">
@@ -99,5 +129,31 @@
             </iframe>
         </div>
     </div>
+    <div class="carousel-manual">
+        <div class="carousel-track-manual">
+            <img src="https://media1.thrillophilia.com/filestore/8vh1qgvmud08c5vm2goj4aucretr_ew41nl9hgdajdas55cjfe02isgid_119.jpg" alt="Image 1">
+            <img src="https://via.placeholder.com/600x200?text=Image+2" alt="Image 2">
+            <img src="https://via.placeholder.com/600x200?text=Image+3" alt="Image 3">
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+    
 </body>
 </html>
+<script>
+    let currentIndex = 0;
+    const trackManual = document.querySelector('.carousel-track-manual');
+    const imagesManual = document.querySelectorAll('.carousel-manual img');
+    const totalImages = imagesManual.length;
+
+    document.querySelector('.next').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalImages;
+        trackManual.style.transform = `translateX(-${currentIndex * 100}%)`;
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        trackManual.style.transform = `translateX(-${currentIndex * 100}%)`;
+    });
+</script>

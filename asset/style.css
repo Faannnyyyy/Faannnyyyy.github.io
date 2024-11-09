@@ -259,7 +259,8 @@ header>h2 {
 }
 
 .skills-section {
-    padding: 10px 0;
+    padding: 40px 0;
+    margin: 40px;
     display: flex;
     justify-content: center;
 }
@@ -333,7 +334,7 @@ header>h2 {
 }
 
 .software-section {
-    padding: 50px;
+    padding: 5px;
     background-color: #f9f9f9;
     text-align: center;
     width: 100%; /* S'assurer que la section prend toute la largeur */
