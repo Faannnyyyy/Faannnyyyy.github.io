@@ -6,23 +6,188 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <link rel="stylesheet" href="./asset/style.css">
+    <style>
+ 
+    
+/* Section Image */
+.left {
+    width: 50%;             /* Prend toute la largeur en colonne */
+    padding: 10px;
+    text-align: center;
+}
+
+.left img {
+    max-width: 100%;        /* Maximal largeur de l'image */
+    height: auto;
+    border-radius: 10px;    /* Coins arrondis */
+    border: 5px solid #ddd; /* Bordure douce gris clair */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Ombre subtile */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition fluide pour l'agrandissement et l'ombre */
+}
+
+/* Effet de survol */
+.left img:hover {
+    transform: scale(1.01); /* Agrandissement léger au survol */
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.3); /* Ombre plus marquée au survol */
+}
+    
+        /* Section Texte */
+        .center {
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid #ddd;  /* Ligne de séparation en haut */
+            border-bottom: 2px solid #ddd; /* Ligne de séparation en bas */
+        }
+    
+        .center h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+    
+        .center p {
+            margin: 5px 0;
+        }
+    
+ /* Stylisation de l'iframe (carte) */
+.right {
+    width: 400px;            /* La carte occupe toute la largeur de son conteneur */
+    height: 150px;          /* Hauteur de la carte */
+    border: none;           /* Enlève la bordure par défaut */
+    border-radius: 10px;    /* Coins arrondis */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition fluide pour l'agrandissement et l'ombre */
+    text-align: center; /* Centre horizontalement l'image */
+    display: flex;          /* Utiliser flexbox */
+    align-items: center;
+
+}
+
+
+
+    </style>
 </head>
 <body>
+
+    <!-- Barre de navigation -->
     <nav>
-        <a href="#">Accueil</a>
-        <a href="#">Contact</a>
-        <a href="#">A propos</a>
-        <a href="#">Plus</a>
+        <a href="index.html">Accueil</a>
+        <a href="contact.html">Contact</a>
+        <a href="mapersonnalite.html">Ma personnalité</a>
+        <a href="mesrealisations.html">Mes réalisations</a>
     </nav> 
-    <div class="sidebar">
-        <a href=""><i class="fa-brands fa-instagram"></i></a>
-        <a href=""><i class="fa-solid fa-hashtag"></i></a>
-        <a href=""><i class="fa-solid fa-hashtag"></i></a>
-        <a href=""><i class="fa-solid fa-hashtag"></i></a>
-        <a href=""><i class="fa-solid fa-hashtag"></i></a>
-        <a href=""><i class="fa-solid fa-hashtag"></i></a>
+
+
+    <!-- Contenu principal avec les trois colonnes -->
+    <div class="container">
+
+        <!-- Colonne du milieu : Texte -->
+        <div class="center">
+            <h1>Technicien SIG (Adj au chef de service)</h1>
+            <p><strong>FEVRIER 2020 - JUILLET 2022</strong></p>
+            <p>SDIS 25 (Service Départemental d'Incendie et de secours du Doubs) à Besançon 25000 France</p>
+            <p><strong>Logiciels SIG :</strong> ArcGIS/ QGIS, SGBD PostgreSQL, ETL FME, Webcarto Lizmap, NetGeo</p>
+        </div>
+
+        <!-- Colonne de gauche : Image -->
+        <div class="left">
+            <a href="https://www.sdis25.fr/" target="_blank">
+            <img src="./asset/media/Photosdis25.jpg" alt="Image illustrative"></a>
+        </div>
+
+        
+    <div class="slideshow-container">
+        <div class="slideshow-slide">
+            <img src="./asset/media/" alt="Image 1">
+        </div>
+        <div class="slideshow-slide">
+            <img src="./asset/media/" alt="Image 1">
+        </div>
+        <div class="slideshow-slide">
+            <img src="./asset/media/" alt="Image 1">
+        </div>
+        <div class="slideshow-slide">
+            <img src="./asset/media/" alt="Image 2">
+        </div>
+        <div class="slideshow-slide">
+            <img src="./asset/media/" alt="Image 3">
+        </div>
+        <div class="slideshow-slide">
+            <img src="./asset/media/" alt="Image 3">
+        </div>
+        <div class="slideshow-slide">
+            <img src="./asset/media/" alt="Image 3">
+        </div>
+        <div class="slideshow-slide">
+            <img src="./asset/media/" alt="Image 3">
+        </div>
+        <div class="slideshow-slide">
+            <img src="./asset/media/" alt="Image 3">
+        </div>
+        <div class="slideshow-slide">
+            <img src="./asset/media/" alt="Image 3">
+        </div>
+
+        <!-- Boutons pour changer de slide -->
+        <button class="prev">Précédent</button>
+        <button class="next">Suivant</button>
     </div>
 
-    
+
+          <!-- Colonne de droite : Carte Google Maps -->
+          <div class="right">
+            <!-- Lien cliquable qui redirige vers la carte Google Maps -->
+            <a href="https://www.google.com/maps/place/Service+D%C3%A9partemental+d'Incendie+et+de+Secours+du+Doubs+(SDIS+25)/@47.251723,5.9776981,17z/data=!3m1!4b1!4m6!3m5!1s0x478d63b5a7161f63:0xddf671cf0f444aec!8m2!3d47.251723!4d5.980273!16s%2Fg%2F113hw2sk7?entry=ttu&g_ep=EgoyMDI0MTEwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                <img 
+                    id="lu_map" 
+                    src="https://www.google.com/maps/vt/data=2_yToeEaT7XxGv5H4ow8FAih0w_eXSX6RQazfVjMXY09dFGwGaeOSVQCoPViCnqYBx1SmngVOtzNbRkLe10rdoDp50wedCtvec8NRaVp8dhSKEJFmERANWM19WhmGDSNLYM76mVchCs5-WrJF30Y6O8iPmI148T0PI-A4QiSJEpzm7FQqk9ncjmwkGsm9MUSHa8dCd0eL18fM8p2EHVd_8FnD6o2WEkkN_rIuQfmX_vsxdzqTOzL_kgUl4lNBsV1D2EitamT5g3X-J6dY48vbp8&amp;w=243&amp;h=160" 
+                    class="YQ4gaf" 
+                    height="160" 
+                    width="243" 
+                    alt="Service Départemental d'Incendie et de Secours du Doubs (SDIS 25) : carte" 
+                    style="display: block;">
+            </a>
+          </div>
+
+    <script>
+        // Attendre que le DOM soit complètement chargé
+        document.addEventListener("DOMContentLoaded", function() {
+            let slides = document.querySelectorAll('.slideshow-slide'); // Sélectionner toutes les slides
+            let prevButton = document.querySelector('.prev'); // Sélectionner le bouton Précédent
+            let nextButton = document.querySelector('.next'); // Sélectionner le bouton Suivant
+
+            let currentIndex = 0; // Index de la slide actuelle
+
+            // Fonction pour afficher la slide en fonction de l'index
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.style.display = 'none';  // Masquer toutes les slides
+                });
+                slides[index].style.display = 'flex'; // Afficher la slide actuelle
+            }
+
+            // Afficher la première slide
+            showSlide(currentIndex);
+
+            // Bouton précédent
+            prevButton.addEventListener('click', () => {
+                currentIndex--;
+                if (currentIndex < 0) {
+                    currentIndex = slides.length - 1; // Revenir à la dernière slide si on est au début
+                }
+                showSlide(currentIndex);
+            });
+
+            // Bouton suivant
+            nextButton.addEventListener('click', () => {
+                currentIndex++;
+                if (currentIndex >= slides.length) {
+                    currentIndex = 0; // Revenir à la première slide si on est à la fin
+                }
+                showSlide(currentIndex);
+            });
+        });
+    </script>
+
 </body>
 </html>
+

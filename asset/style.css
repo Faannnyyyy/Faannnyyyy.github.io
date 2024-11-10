@@ -30,7 +30,7 @@ nav {
     top: 0;                         /* Positionne la nav en haut de la page */
     left: 0;                        /* Positionne la nav à gauche de la page */
     height: 100vh;                  /* La navigation prend toute la hauteur de la fenêtre */
-    width: 200px;                   /* Définit la largeur de la barre de navigation */
+    width: 150px;                   /* Définit la largeur de la barre de navigation */
     background-color: #f0f0f0;      /* Couleur de fond de la nav */
     padding: 20px;                  /* Ajoute de l'espace à l'intérieur de la nav */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);  /* Ombre pour un effet visuel */
@@ -181,10 +181,10 @@ header>h2 {
 
 .container {
     display: flex;
-    flex-direction: column; /* Organiser les sections l'une sous l'autre */
-    align-items: center; /* Centrer les sections horizontalement */
-    width: 100%; /* Utiliser toute la largeur */
-    margin: 80px 0; /* Marge pour espacer des sections */
+    flex-direction: column;      /* Organiser les sections l'une sous l'autre */
+    align-items: center;         /* Centrer les sections horizontalement */
+    max-width: 800px;            /* Largeur maximale pour limiter l'étirement */
+    margin: auto; /* Centrage auto */
 }
 
 .experience-section {
@@ -460,3 +460,68 @@ footer {
     background-color: #fff;
     margin-top: 40px;
 }
+
+/* ........DIAPORAMA....... */
+
+/* Conteneur du diaporama */
+.slideshow-container {
+    position: relative;
+    width: 595px;                  /* Largeur A4 en pixels */
+    height: 842px;                 /* Hauteur A4 en pixels */
+    margin: 0 auto;                /* Centre le diaporama sur la page */
+    border: 5px solid #ddd;        /* Bordure élégante */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Ombre douce */
+    overflow: hidden;
+    border-radius: 8px;            /* Coins légèrement arrondis */
+    display: flex;                 /* Utilise flexbox pour centrer */
+    justify-content: center;       /* Centre horizontalement */
+    align-items: center;           /* Centre verticalement */
+}
+
+/* Slide spécifique */
+.slideshow-slide {
+    width: 100%;
+    height: 100%;
+    display: none;                 /* Cache toutes les slides sauf la première */
+    justify-content: center;       /* Centre horizontalement */
+    align-items: center;           /* Centre verticalement */
+    background-color: rgba(0, 0, 0, 0.8); /* Fond gris-noir semi-transparent */
+}
+
+/* Image dans le slide */
+.slideshow-slide img {
+    max-width: 100%;                /* Limite la largeur de l'image au conteneur */
+    max-height: 100%;               /* Limite la hauteur de l'image au conteneur */
+    object-fit: contain;           /* Conserve les proportions de l'image */
+    display: block;                /* Rend l'image un élément de bloc */
+}
+
+
+.slideshow-container .prev,
+.slideshow-container .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.slideshow-container .prev {
+    left: 10px;
+}
+
+.slideshow-container .next {
+    right: 10px;
+}
+
+.slideshow-container .prev:hover,
+.slideshow-container .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
