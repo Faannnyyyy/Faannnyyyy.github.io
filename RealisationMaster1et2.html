@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="./asset/style.css">
+    <style>
+ 
+    
+/* Section Image */
+.left {
+    width: 50%;             /* Prend toute la largeur en colonne */
+    padding: 10px;
+    text-align: center;
+}
+
+.left img {
+    max-width: 100%;        /* Maximal largeur de l'image */
+    height: auto;
+    border-radius: 10px;    /* Coins arrondis */
+    border: 5px solid #ddd; /* Bordure douce gris clair */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Ombre subtile */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition fluide pour l'agrandissement et l'ombre */
+}
+
+/* Effet de survol */
+.left img:hover {
+    transform: scale(1.01); /* Agrandissement léger au survol */
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.3); /* Ombre plus marquée au survol */
+}
+    
+        /* Section Texte */
+        .center {
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid #ddd;  /* Ligne de séparation en haut */
+            border-bottom: 2px solid #ddd; /* Ligne de séparation en bas */
+        }
+    
+        .center h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+    
+        .center p {
+            margin: 5px 0;
+        }
+
+
+/* Effet de survol pour le lien autour de la carte */
+.right a:hover {
+    transform: scale(1.05);  /* Agrandissement léger au survol */
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.3); /* Ombre plus marquée au survol */
+    border-radius: 10px;    /* Coins arrondis */
+}
+
+
+.slideshow-slide iframe {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: 800px; /* Ajustez cette hauteur selon vos besoins */
+    width: 600px;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Barre de navigation -->
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="contact.html">Contact</a>
+        <a href="mapersonnalite.html">Ma personnalité</a>
+        <a href="mesrealisations.html">Mes réalisations</a>
+    </nav> 
+
+
+    <!-- Contenu principal avec les trois colonnes -->
+    <div class="container">
+
+        <!-- Colonne du milieu : Texte -->
+        <div class="center">
+            <h1>AUTRES REALISATIONS</h1>
+            <p><strong></strong></p>
+            <p></p>
+        </div>
+
+
+        
+    <div class="slideshow-container">
+        <div class="slideshow-slide">
+            <img src="./asset/media/RUBYfanny_poster_RI_Besancon (1).jpg" alt="Image 3">
+        </div>
+        <div class="slideshow-slide">
+            <iframe src="./asset/media/Dossier AMUD54 (1).pdf" width="100%" height="500px" frameborder="0"></iframe>
+        </div>
+        <div class="slideshow-slide">
+            <iframe src="./asset/media/AMUD54.pdf" width="100%" height="500px" frameborder="0"></iframe>
+        </div>
+
+
+        
+        <!-- Boutons pour changer de slide -->
+        <button class="prev">Précédent</button>
+        <button class="next">Suivant</button>
+        
+
+    </div>
+
+         
+
+    <script>
+        // Attendre que le DOM soit complètement chargé
+        document.addEventListener("DOMContentLoaded", function() {
+            let slides = document.querySelectorAll('.slideshow-slide'); // Sélectionner toutes les slides
+            let prevButton = document.querySelector('.prev'); // Sélectionner le bouton Précédent
+            let nextButton = document.querySelector('.next'); // Sélectionner le bouton Suivant
+
+            let currentIndex = 0; // Index de la slide actuelle
+
+            // Fonction pour afficher la slide en fonction de l'index
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.style.display = 'none';  // Masquer toutes les slides
+                });
+                slides[index].style.display = 'flex'; // Afficher la slide actuelle
+            }
+
+            // Afficher la première slide
+            showSlide(currentIndex);
+
+            // Bouton précédent
+            prevButton.addEventListener('click', () => {
+                currentIndex--;
+                if (currentIndex < 0) {
+                    currentIndex = slides.length - 1; // Revenir à la dernière slide si on est au début
+                }
+                showSlide(currentIndex);
+            });
+
+            // Bouton suivant
+            nextButton.addEventListener('click', () => {
+                currentIndex++;
+                if (currentIndex >= slides.length) {
+                    currentIndex = 0; // Revenir à la première slide si on est à la fin
+                }
+                showSlide(currentIndex);
+            });
+        });
+    </script>
+
+</body>
+</html>
+
