@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="./asset/style.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <!-- Barre de navigation -->
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="contact.html">Contact</a>
+        <a href="mapersonnalite.html">Ma personnalité</a>
+        <a href="MesObjectifs.html">Mes objectifs</a>
+        <a href="Loisirs.html">Mes loisirs</a>
+    </nav> 
+
+    <header><h2>Scripts Python - Exemple de réalisation</h2> </header>
+
+    <div class="container">
+        <!-- Votre contenu principal ici -->
+        <h3>Scripts Python : Créer un html avec des photos géolocalisés sur une map</h3>
+        <!-- Bloc de commande stylisé -->
+        <div class="command-container">
+            <div class="code-line">
+                # Étape 1: Installer folium
+                # Ouvrez un terminal et exécutez : pip install folium
+                
+                
+                from PIL import Image
+                import exifread
+                # Étape 2: Importer folium
+                import folium
+                import os
+                
+                # Étape 3: Créer une carte centrée sur une position spécifique (par exemple, Paris)
+                # Latitude et Longitude de Paris
+                def get_geolocation(image_path):
+                    with open(image_path, 'rb') as image_file:
+                        tags = exifread.process_file(image_file)
+                
+                        lat = tags.get('GPS GPSLatitude')
+                        lat_ref = tags.get('GPS GPSLatitudeRef')
+                        lon = tags.get('GPS GPSLongitude')
+                        lon_ref = tags.get('GPS GPSLongitudeRef')
+                
+                        if lat and lon and lat_ref and lon_ref:
+                            lat_decimal = get_decimal_from_dms(lat.values, lat_ref.values)
+                            lon_decimal = get_decimal_from_dms(lon.values, lon_ref.values)
+                            return [lat_decimal, lon_decimal]
+                        else:
+                            return None
+                
+                
+                
+                def mymap():
+                    # Créer une carte
+                    mymap = folium.Map(zoom_start=10)
+                    chemimg = "C:/Users/fanny/OneDrive/Bureau/cours/Photogeoloc/" #utilisateur va rentrer chemin d un dossier
+                    listfichier = os.listdir(chemimg)
+                    for chem in listfichier:
+                        get_geolocation(chemimg+chem)
+                        print(get_geolocation(chemimg+chem),chem)
+                        # Optionnel: Ajouter un marqueur
+                        html = '<'img style="max-width:200px" src="'+chemimg+chem+'>' #modifier les ''
+                        localisation = get_geolocation(chemimg+chem)
+                        if localisation != None: # si on a une localisation on a un marker
+                            folium.Marker(location=localisation, popup=html).add_to(mymap)
+                
+                    # Étape 4: Enregistrer la carte dans un fichier HTML
+                    tiles='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+                    attr='Esri'
+                    mymap.save("mymap.html")
+                
+                
+                def get_decimal_from_dms(dms, ref):
+                    degrees = dms[0].num / dms[0].den
+                    minutes = dms[1].num / dms[1].den
+                    seconds = dms[2].num / dms[2].den
+                    decimal = degrees + (minutes / 60.0) + (seconds / 3600.0)
+                    if ref in ['S', 'W']:
+                        decimal = -decimal
+                    return decimal
+                
+                
+                
+                mymap() 
+                
+                </div>
+            <div class="code-line">for i in range(5):</div>
+            <div class="code-line">    print(i)</div>
+        </div>
+
+        <h3>Scripts Python : Redimensionner des images</h3>
+        <!-- Bloc de commande stylisé -->
+        <div class="command-container">
+            <div class="code-line">
+                from PIL import Image
+                import os
+                
+                def compress(chemimg, nivcompr, img): #modele
+                    # Ouvrir l'image
+                    image = Image.open(chemimg)
+                
+                    largeur, hauteur = image.size
+                    ratio = largeur/hauteur
+                    newlargeur = largeur
+                    newhauteur = hauteur 
+                    if largeur > 1800:
+                        #diviser en gardant que l unité = //
+                        newlargeur = 1200
+                        newhauteur = int(1200/ratio)
+                
+                
+                    image = image.resize((newlargeur, newhauteur)) #
+                    #sauvegarder img
+                    image.save(img, optimize=True, quality=nivcompr)
+                
+                
+                if __name__ == "__main__":
+                    chemimg = "C:\\Users\\fanny\\OneDrive\\Bureau\\cours\\image redim\\" #utilisateur va rentrer chemin d un dossier
+                    listfichier = os.listdir(chemimg)
+                    for img in listfichier:
+                        try:
+                            compress(chemimg + img, 85,img) #utiliser le modele avec les donnees qu on veut dedans
+                        except Exception as err:
+                            print(str(err))
+                            print("echec de la compression "+img)
+                                
+            </div>
+        </div> 
+        
+        <h3>Scripts Python : Se connecter à une API</h3>
+        <!-- Bloc de commande stylisé -->
+        <div class="command-container">
+            <div class="code-line">
+                import requests
+
+                # 66b2684b9ccd1921573535mnt270bf6 
+                # url de l'API des photos de chien
+                url = "https://dog.ceo/api/breeds/image/random"
+                # on fait la requête de type GET sur l'URL et on récupère la réponse de la requête
+                response = requests.get(url)
+                print(response.text)                 
+            </div>
+        </div>
+
+        
+        <h3>Scripts Python : Manipuler des fichiers</h3>
+        <!-- Bloc de commande stylisé -->
+        <div class="command-container">
+            <div class="code-line">
+                from PIL import Image
+                import os
+                
+                def compress(chemimg, nivcompr, img): #modele
+                    # Ouvrir l'image
+                    image = Image.open(chemimg)
+                
+                    largeur, hauteur = image.size
+                    ratio = largeur/hauteur
+                    newlargeur = largeur
+                    newhauteur = hauteur 
+                    if largeur > 1800:
+                        #diviser en gardant que l unité = //
+                        newlargeur = 1200
+                        newhauteur = int(1200/ratio)
+                
+                
+                    image = image.resize((newlargeur, newhauteur)) #
+                    #sauvegarder img
+                    image.save(img, optimize=True, quality=nivcompr)
+                
+                
+                if __name__ == "__main__":
+                    chemimg = "C:\\Users\\fanny\\OneDrive\\Bureau\\cours\\image redim\\" #utilisateur va rentrer chemin d un dossier
+                    listfichier = os.listdir(chemimg)
+                    for img in listfichier:
+                        try:
+                            compress(chemimg + img, 85,img) #utiliser le modele avec les donnees qu on veut dedans
+                        except Exception as err:
+                            print(str(err))
+                            print("echec de la compression "+img)
+                                
+            </div>
+        </div>
+
+        <h3>Scripts Python : Trouver et déplacer une extension de fichier dans une arborescence de dossier</h3>
+        <!-- Bloc de commande stylisé -->
+        <div class="command-container">
+            <div class="code-line">
+                """ Script qui cherche dans tous les dossiers les .bak"""
+
+            import os  # Module pour interagir avec le système de fichiers
+            import glob  # Module pour rechercher des fichiers selon un motif spécifique
+            import shutil
+
+            def find_bak_files(directory):
+                """
+                Recherche et affiche tous les fichiers .bak dans le répertoire donné et ses sous-répertoires.
+                
+                Args:
+                directory (str): Le chemin du répertoire où rechercher les fichiers .bak.
+                
+                Returns:
+                list: Une liste des chemins des fichiers .bak trouvés.
+                """
+                
+                bak_files = []  # Liste pour stocker les chemins des fichiers .bak trouvés
+
+                # Utiliser os.walk pour parcourir les répertoires et sous-répertoires
+                for root, dirs, files in os.walk(directory):
+                    # root: chemin du répertoire courant
+                    # dirs: liste des sous-répertoires dans le répertoire courant
+                    # files: liste des fichiers dans le répertoire courant
+
+                    # Construire le motif de recherche pour les fichiers .bak dans le répertoire actuel
+                    search_pattern = os.path.join(root, '*.bak')
+                    # os.path.join combine le chemin du répertoire courant avec le motif '*.bak'
+                    
+                    # Utiliser glob pour trouver tous les fichiers .bak correspondant au motif
+                    found_files = glob.glob(search_pattern)
+                    # glob.glob retourne une liste de fichiers correspondant au motif
+                    
+                    # Ajouter les fichiers trouvés à la liste bak_files
+                    bak_files.extend(found_files)
+                
+            # Afficher les fichiers trouvés
+            for bak_file in bak_files:
+                print(f'Trouvé: {bak_file}')
+            
+            return bak_files
+
+            def deplacebak(bak_files2, destination):
+                compteur = 1
+
+                # Déplacer chaque fichier
+                for fichier in bak_files2:
+                    # Obtenir le nom du fichier
+                    nom_fichier = os.path.basename(fichier)
+                    # Chemin complet de destination
+                    chemin_destination = os.path.join(destination, str(compteur)+"_"+nom_fichier)
+                    # Déplacer le fichier
+                    shutil.move(fichier, chemin_destination)
+                    compteur = compteur + 1
+                    print(f'Le fichier {fichier} a été déplacé vers {chemin_destination}')
+
+
+
+
+            # Exemple d'utilisation
+            directory = 'C:\\Users\\fanny\\OneDrive\\Bureau\\Supression_bak\\Dossier_test'  # Remplacez par le chemin réel de votre répertoire Suppression_bak
+            
+
+            bak_files2 = find_bak_files(directory)# Appeler la fonction avec le chemin du répertoire
+            destination = 'C:\\Users\\fanny\\OneDrive\\Bureau\\Deplacementbak'
+
+            deplacebak(bak_files2, destination)
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+

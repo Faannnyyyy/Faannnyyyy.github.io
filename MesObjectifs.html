@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Objectifs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Parisienne&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./asset/style.css">
+    <style>
+        
+        /* Header */
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: #333;
+            color: #fff;
+        }
+        header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5em;
+            letter-spacing: 1px;
+        }
+        .highlight {
+            color: #e67e22;
+        }
+        /* Spécificité du M en orange */
+        .highlight::before {
+            content: "O";
+            color: #ff0000;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-right: -3px;
+        }
+        
+        /* Section des projets */
+        .projects {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .project-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            transition: transform 0.3s;
+            overflow: hidden; /* pour garder l'image dans le conteneur */
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+        .project-card img {
+            width: 100%;
+            height: 250px; /* Hauteur maximale */
+            object-fit: cover; /* Coupe l'image pour qu'elle rentre dans le cadre */
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .project-card h3 {
+            margin: 15px 0 10px;
+            color: #333;
+        }
+        .project-card p {
+            padding: 0 20px 20px;
+            color: #666;
+            font-size: 1em;
+            line-height: 1.5;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="contact.html">Contact</a>
+        <a href="mapersonnalite.html">Ma personnalité</a>
+        <a href="MesObjectifs.html">Mes objectifs</a>
+        <a href="Loisirs.html">Mes loisirs</a>
+    </nav> 
+
+    <header>
+        <h1><span class="highlight">bjectifs durant les 5 prochaines années</span></h1>
+    </header>
+
+    <section class="projects">
+        <!-- Objectif 1 : Développement d'applications -->
+        <div class="project-card">
+            <img src="https://img.freepik.com/vecteurs-libre/concept-developpement-applications-deisng-plat_23-2147851632.jpg" alt="Développement d'applications">
+            <h3>Objectif 1</h3>
+            <p>Développer mes compétences en informatique (Java etc.) pour savoir créer une application mobile.</p>
+        </div>
+        
+        <!-- Objectif 2 : Apprentissage de l'anglais -->
+        <div class="project-card">
+            <img src="https://www.ipag.edu/sites/default/files/styles/actu_550/public/2022-02/shutterstock_492729481.jpg" alt="Amélioration de l'anglais">
+            <h3>Objectif 2</h3>
+            <p>Améliorer mes compétences en anglais jusqu'à devenir bilingue pour faciliter les échanges professionnels.</p>
+        </div>
+        
+        <!-- Objectif 3 : Création de contenu de formation -->
+        <div class="project-card">
+            <img src="https://cdn.prod.website-files.com/6135232f63b83d76d15dbc33/61f1285506ce625c73cbf97a_Vignettes%20Formations%20Youtube.jpg" alt="Création de contenu de formation">
+            <h3>Objectif 3</h3>
+            <p>Créer des contenus de formation (vidéos en ligne, tutoriels) pour partager mes connaissances et aider les autres à progresser.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Loisirs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./asset/style.css">
+    <style>
+        header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8em;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        /* Conteneur des loisirs */
+        .hobby-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px;
+        }
+
+        /* Style des cartes de loisir */
+        .hobby-card {
+            width: 200px;
+            height: 550px; /* Augmentation de la hauteur pour plus d'espace */
+            perspective: 1000px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Carte intérieure pour l'effet de rotation */
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s ease;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Faces avant et arrière de la carte */
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 10px;
+            padding: 20px;
+            color: #fff;
+        }
+
+        /* Couleurs et styles des cartes de loisir */
+        .card-front {
+            background-color: #333;
+            color: #fff;
+        }
+        .card-back {
+            background-color: #f4f4f9;
+            color: #333;
+            transform: rotateY(180deg);
+            font-size: 0.9em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px; /* Augmente l'espace pour centrer les images */
+            overflow-y: scroll; /* Permet le défilement pour voir toutes les images */
+        }
+
+        /* Styles spécifiques pour chaque loisir */
+        .reading .card-front { background-color: #5a8dee; }
+        .voyage .card-front { background-color: #ff6b6b; }
+        .sports .card-front { background-color: #48c774; }
+        .animals .card-front { background-color: #f9ca24; }
+        .computing .card-front { background-color: #a29bfe; }
+
+        /* Effet de rotation */
+        .hobby-card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* Style de la galerie de livres */
+        .book-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        
+        .book-gallery img {
+            width: 70px; /* Réduction de la largeur pour s'assurer qu'elles sont visibles */
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="contact.html">Contact</a>
+        <a href="mapersonnalite.html">Ma personnalité</a>
+        <a href="MesObjectifs.html">Mes objectifs</a>
+        <a href="Loisirs.html">Mes loisirs</a>
+    </nav> 
+
+    <header>
+        <h1>Mes loisirs</h1>
+    </header>
+
+    <div class="hobby-container">
+        <!-- Lecture -->
+        <div class="hobby-card reading" onclick="toggleFlip(this)">
+            <div class="card-inner">
+                <div class="card-front">Lecture</div>
+                <div class="card-back">
+                    <p>Livres que je lis :</p>
+                    <div class="book-gallery">
+                        <img src="asset/media/21leçonspourleXXIs.jpeg" alt="21 leçons pour le XXIe siècle">
+                        <img src="asset/media/Sapiens-edition-2022.jpg" alt="Sapiens, une brève histoire de l'humanité">
+                        <img src="asset/media/21leçonspourleXXIs.jpeg" alt="21 leçons pour le XXIe siècle">
+                        <img src="asset/media/Sapiens-edition-2022.jpg" alt="Sapiens, une brève histoire de l'humanité">
+                        <img src="asset/media/Lartsubtiledesenfoutre.jpg" alt="L'Art subtil de s'en foutre">
+                        <img src="asset/media/Necouperjamaislapoireendeux.jpg" alt="Ne coupez jamais la poire en deux">
+                        <img src="asset/media/disruption.jpg" alt="Disruption">
+                        <img src="asset/media/quatreaccordstolteques.jpg" alt="Les Quatre Accords Toltèques">
+                        <img src="asset/media/commentnepasmourir.jpg" alt="Comment ne pas mourir">
+                        <img src="asset/media/ElonMusk.jpg" alt="Elon Musk : Tesla, PayPal et SpaceX">
+                        <img src="asset/media/ConcentrACTION.jpg" alt="Concentration">
+                        <img src="asset/media/Paer-une-bonne-journee-au-bureau-c-est-poible.jpg" alt="Passer une bonne journée au bureau">
+                        <img src="asset/media/chroniquesdelespace.jpg" alt="Chroniques de l'espace">
+                        <img src="asset/media/fenetressontdesmurs.jpg" alt="Les mots sont des fenêtres">
+                        <img src="asset/media/Toutlemondenapas.jpg" alt="Tout le monde n'a pas eu la chance de rater ses études">
+                        <img src="asset/media/theoremeduparapluie.jpg" alt="Le théorème du parapluie">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Moto -->
+        <div class="hobby-card voyage" onclick="toggleFlip(this)">
+            <div class="card-inner">
+                <div class="card-front">Voyage</div>
+                <div class="card-back"><img src="assets/" alt="Voyage"></div>
+            </div>
+        </div>
+
+        <!-- Sport -->
+        <div class="hobby-card sports" onclick="toggleFlip(this)">
+            <div class="card-inner">
+                <div class="card-front">Sport</div>
+                <div class="card-back">
+                    <img src="asset/media/sport.jpg" alt="Salle de sport" style="width: 100%; height: auto; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Animaux -->
+        <div class="hobby-card animals" onclick="toggleFlip(this)">
+            <div class="card-inner">
+                <div class="card-front">Animaux</div>
+                <div class="card-back"><img src="assets/lapin.jpg" alt="Lapin"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Fonction pour retourner la carte
+        function toggleFlip(card) {
+            card.classList.toggle('flipped');
+        }
+    </script>
+</body>
+</html>

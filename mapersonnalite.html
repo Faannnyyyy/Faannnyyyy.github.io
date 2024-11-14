@@ -7,13 +7,54 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Parisienne&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./asset/style.css"> <!-- Lien vers ton fichier CSS -->
+    <style>
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2em;
+        }
+        .swot-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .swot-card {
+            background: #fff;
+            border: 2px solid #e67e22;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            flex: 1 1 45%;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: start;
+        }
+        .swot-card h2 {
+            font-size: 1.5em;
+            color: #e67e22;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .swot-card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .swot-card li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+    </style>
+
 </head>
 <body>
     <nav>
         <a href="index.html">Accueil</a>
         <a href="contact.html">Contact</a>
         <a href="mapersonnalite.html">Ma personnalité</a>
-        <a href="mesrealisations.html">Mes réalisations</a>
+        <a href="MesObjectifs.html">Mes objectifs</a>
+        <a href="Loisirs.html">Mes loisirs</a>
     </nav> 
 
     <header>
@@ -51,6 +92,52 @@
                     <p><strong>Ambition :</strong> Fixer de nouveaux objectifs et les atteindre est une de mes motivations principales. Je vise toujours à progresser.</p>
                 </div>
             </div>
+
+        
+    <h1>SWOT de ma personnalité professionnelle</h1>
+    <div class="swot-container">
+        <!-- Forces -->
+        <div class="swot-card">
+            <h2>Forces</h2>
+            <ul>
+                <li><strong>Ambitieuse</strong> : Objectifs élevés.</li>
+                <li><strong>Déterminée</strong> : Persévérante face aux défis techniques.</li>
+                <li><strong>Autonome</strong> : Capable de travailler indépendamment.</li>
+                <li><strong>Serviable et bienveillante</strong> : Facilite le travail d'équipe et la communication.</li>
+            </ul>
+        </div>
+
+        <!-- Faiblesses -->
+        <div class="swot-card">
+            <h2>Faiblesses</h2>
+            <ul>
+                <li><strong>Émotivité</strong> : Peut influencer le jugement ou créer du stress.</li>
+                <li><strong>Difficulté à donner sa confiance</strong> : Peut ralentir la collaboration avec de nouveaux collègues.</li>
+                <li><strong>Ambition pressante</strong> : Peut générer de la pression pour atteindre des résultats.</li>
+            </ul>
+        </div>
+
+        <!-- Opportunités -->
+        <div class="swot-card">
+            <h2>Opportunités</h2>
+            <ul>
+                <li><strong>Partante pour de nouveaux défis</strong> : Ouvre la porte à des projets innovants.</li>
+                <li><strong>Ouverture d'esprit</strong> : Réceptive aux nouvelles idées et technologies.</li>
+                <li><strong>Compétences techniques évolutives</strong> : Permet d’adopter de nouvelles technologies.</li>
+            </ul>
+        </div>
+
+        <!-- Menaces -->
+        <div class="swot-card">
+            <h2>Menaces</h2>
+            <ul>
+                <li><strong>Gestion des émotions</strong> : sensibilité, besoin d'écoute et de bienveillance.</li>
+                <li><strong>Manque de confiance aux autres</strong> : Peut ralentir la prise de décision en équipe.</li>
+                <li><strong>Exigence élevée</strong> : Peut nuire au bien-être personnel si les objectifs sont trop exigeants.</li>
+            </ul>
+        </div>
+    </div>
+
         </div>
     </section>
 

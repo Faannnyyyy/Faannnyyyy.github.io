@@ -525,3 +525,26 @@ footer {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+.command-container {
+    background-color: #1e1e1e; /* Fond sombre */
+    color: #00ff00; /* Texte vert comme dans un terminal */
+    font-family: monospace; /* Police de type terminal */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin: 20px auto; /* Marge pour espacer des autres éléments */
+    max-width: 600px; /* Largeur max pour centrage */
+    overflow-x: auto; /* Barre de défilement horizontal si le texte est trop long */
+}
+
+.command-container::before {
+    content: "$ "; /* Préfixe style terminal */
+    color: #00ff00; /* Préfixe en vert */
+}
+
+.code-line {
+    display: block;
+    white-space: pre; /* Pour préserver l'indentation */
+    margin-left: 20px; /* Indentation supplémentaire */
+    color : rgb(254, 250, 4);
+}
